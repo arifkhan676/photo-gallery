@@ -4,6 +4,13 @@ import ImgGallery from './ImgGallery';
 import '../App.css'
 import { Modal, Button, ModalBody, ModalFooter } from 'reactstrap';
 import ImgModal from './ImgModal';
+import { connect } from 'react-redux';
+
+const mapToStateProps = state => {
+    return {
+        images: state.images
+    }
+}
 
 const Gallery = (props) => {
 
@@ -57,4 +64,4 @@ const Gallery = (props) => {
     )
 }
 
-export default Gallery
+export default connect(mapToStateProps)(Gallery)

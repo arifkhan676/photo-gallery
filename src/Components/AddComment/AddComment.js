@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Form, Input } from 'reactstrap'
+import { connect } from 'react-redux'
+
+
 
 class AddComment extends Component {
 
@@ -29,6 +32,7 @@ class AddComment extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div>
                 <Form onSubmit={this.handleSubmit} >
@@ -57,4 +61,4 @@ class AddComment extends Component {
 
 }
 
-export default AddComment
+export default (AddComment)
