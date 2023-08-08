@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-const mapToStateProps = state => {
+const mapStateToProps = state => {
+    console.log("mpt", state);
     return {
         images: state.images
     }
@@ -9,6 +10,11 @@ const mapToStateProps = state => {
 
 
 class Home2 extends Component {
+
+    componentDidMount() {
+        console.log("state", this.state);
+        console.log("props", this.props);
+    }
 
     render() {
         return (
@@ -20,4 +26,4 @@ class Home2 extends Component {
 
 }
 
-export default connect(mapToStateProps)(Home2)
+export default connect(mapStateToProps)(Home2)

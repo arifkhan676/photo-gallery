@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import { images } from './ImgBox/ImgBox';
 import ImgGallery from './ImgGallery';
 import '../App.css'
 import { Modal, Button, ModalBody, ModalFooter } from 'reactstrap';
 import ImgModal from './ImgModal';
 import { connect } from 'react-redux';
 
-const mapToStateProps = state => {
+const mapStateToProps = state => {
     return {
         images: state.images
     }
@@ -14,7 +13,7 @@ const mapToStateProps = state => {
 
 const Gallery = (props) => {
 
-    const [image] = useState(images);
+    const [image] = useState(props.images);
     const [imageModal, setImgModal] = useState(null);
     const [modalOpen, setModalOpen] = useState(false)
     //  
@@ -64,4 +63,4 @@ const Gallery = (props) => {
     )
 }
 
-export default connect(mapToStateProps)(Gallery)
+export default connect(mapStateToProps)(Gallery)
